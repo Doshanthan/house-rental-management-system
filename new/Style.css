@@ -1,0 +1,627 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.active{
+    color:orange;
+    text-decoration: underline;
+    font-weight: bold;
+
+}
+li {
+    float: left;
+  }
+/*Navbar*/
+.navbar{
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
+}
+.logo{
+    color: white;
+    font-weight: 500;
+}
+.logo span{
+    color: orange;
+}
+.navlinks{
+    display: flex;
+    align-items: center;
+}
+.navlinks li{
+    margin: 0 20px;
+}
+.navlinks li a{
+    color: white;
+    text-transform: uppercase;
+}
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 10px 8px;
+    text-decoration: none;
+  }
+  li.dropdown {
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+.ctn{
+    padding: 5px 15px;
+    background-color:orange;
+    border-radius: 30px;
+    color: white;
+    align-items: center;
+    text-transform: capitalize;
+    font-weight: 700;
+    border: 2px solid orange;
+}
+.sctn{
+    padding: 5px 15px;
+    background-color:orange;
+    border-radius: 30px;
+    color: white;
+    align-items: center;
+    text-transform: capitalize;
+    font-weight: 700;
+    border: 2px solid orange;
+}
+header{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(6, 24, 46, 0.8), rgba(6, 24, 46, 0.8)),
+    url("Images/home.jpg");
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headercontent{
+    color: white;
+    text-align: center;
+}
+.headercontent h1{
+    font-size: 7vmin;
+    font-weight:400;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.headercontent h2{
+    font-size: 6vmin;
+    font-weight:400;
+    color: orange;
+}
+.headercontent p{
+    color: white;
+    font-size: 1.2em;
+    text-align: left;
+    font-weight: 500;
+}
+.menuBtn{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    cursor: pointer;
+    display: none;
+}
+.mobilemenu{
+    margin-top: 0;
+}
+
+/*Sign In*/
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(225,225,225,.5);
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    display: flex;
+    transform: translateX(125%);  
+    overflow: hidden;
+    transform: scale(0);
+    transition:transform .5s ease, height .2s ease;
+    color: white;
+}
+.wrapper.active-popup{
+    transform: scale(1);
+}
+.wrapper.active{
+    height: 520px;
+}
+.wrapper .formBoxLogin{
+    width: 100%;
+    padding: 40px;
+}
+.wrapper .formBoxLogin{
+   transition: transform .18s ease;
+   transform: translateX(0);
+}
+.wrapper .formReister{
+    transition: transform .18s ease;
+    transform: translateX(0);
+ }
+.wrapper.active .formBoxLogin{
+    transition: none;
+    transform: translateX(-400px);
+}
+.wrapper.active .formReister{
+    transition: transform .18s ease;
+    transform: translateX(0);
+ }
+.wrapper .formReister{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+.wrapper .inputBox label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.wrapper .CloseIcon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #06182E;
+    font-size: 2em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.selectRole{
+    width: 100%;
+    height: 20px;
+    margin: 0 50px;
+    justify-content: space-between;
+}
+.selectRole .tenant{
+    margin-left: 35px;
+}
+.formBoxLogin .inputBox{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid white;
+    margin: 30px 0;
+}
+.inputBox label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.inputBox input:focus~label,
+.inputBox input:valid~label{
+    top: -3px;
+}
+.inputBox input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.inputBox .icon1{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: white;
+    line-height: 57px;
+
+}
+.rememberforget{
+    font-size: 0.9em;
+    color: white;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    justify-content: space-between;
+}
+.rememberforget label input{
+    accent-color: white;
+    margin-right: 3px;
+}
+.rememberforget a{
+    color: white;
+    padding-left: 90px;
+}
+.rememberforget a:hover{
+    text-decoration: underline;
+}
+.btn{
+    width: 100%;
+    height: 45px;
+    background: orange;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: bold;
+}
+.loginregister{
+    font-size: 0.9em;
+    color: #06182E;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.loginregister p a{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+.loginregister p a:hover{
+    text-decoration: underline;
+}
+/*-------------------------Sign up------------------------------*/
+.wrapper .formReister{
+    width: 100%;
+    padding: 20px;
+}
+section{
+    width: 80%;
+    margin: 80px auto;
+}
+.formReister .inputBox{
+    height: 10px;
+}
+.formReister .inputBox{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 5px 0;
+}
+.formReister .inputBox input{
+    width: 100%;
+    height: 40%;
+    background: transparent;
+    border-bottom: 2px solid white;
+    outline: none;  
+}
+.formReister .inputBox label{
+    font-weight: bold;
+    color: white;
+    transform: translateY(-10px);
+}
+.formReister h2{
+    padding-top: 50px;
+    margin-top: 30px;
+    margin-left: 100px;
+    font-weight: 600;
+}
+.formReister .selectRole{
+    transform: translateX(60px);
+    transform: translateY(-30px);
+}
+.formReister .rememberforget{
+    transform: translateY(-15px);
+}
+.formReister .btn{
+    transform: translateY(-30px);
+}
+.formReister .register{
+    transform: translateY(-60px);
+}
+.rebtn{
+    width: 100%;
+    height: 45px;
+    background: orange;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: bold;
+    transform: translateY(-30px);
+}
+.register{
+    font-size: 0.9em;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.register p a{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+.register p a:hover{
+    text-decoration: underline;
+}
+.row{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+.row .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+.row .column img{
+    width: 70%;
+    border-radius: 5%;
+}
+h3{
+    font-weight: bold;
+    color: #06182E;
+    
+}
+p{
+    color: dimgray;
+    padding: 0 4px;
+}
+.events .row{
+    margin-top: 50px;
+}
+.footer{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    padding: 0px 80px;
+    margin: 0;
+    background-color:#06182E ;
+    align-items: center;
+}
+.icon{
+    display: inline-block;
+    padding: 15px 5px;
+    color: white;
+    size: 35px;
+}
+.footer .fot{
+    display: inline-block;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    justify-content: space-between;
+    margin: 0 250px;
+}
+/*-------------------------------Contact Us-------------------------*/
+header.contact{
+    background-color: #06182E;
+    background-image:none;
+}
+.cnavbar{
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
+    background-color: #06182E;
+}
+.send{
+    width: 100px;
+    height: 45px;
+    background: orange;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.conus{
+    width: 100%;
+    padding: 50px;
+}
+.conus .title h2{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #06182E;
+    text-align: center;
+}
+.conus .title p{
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: black;
+}
+.conemail{
+    width: 600px;
+    height: 630px;
+	border: 2px solid rgba(225,225,225,.5);
+	box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    border-radius: 50px;
+}
+.conemail .einput{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.conemail .einput input{
+    width: 70%;
+}
+.detail{
+    margin-top: 60px;
+}
+.detail p{
+    color: #06182E;
+    margin-left: 25px;
+}
+/*----------------------------Properties---------------------------------------*/
+.gallery{
+    max-width: 1200px;
+    margin-top: 100px;
+    overflow: auto;
+}
+.sgallery{
+    margin: 5px;
+    border: 2px solid rgba(225,225,225,.5);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 30px;
+    float: left;
+    width: 330px;
+    overflow: hidden;
+}
+.sgallery img{
+    width: 100%;
+    height: 250px;
+}
+.ides{
+    padding: 15px;
+    text-align: left;
+}
+.ides p{
+    color: black;
+    font-weight: 500;
+    font-family: Verdana;
+}
+.available{
+    background-color: green;
+    margin-left: 30px;
+    width: 100px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    color: black;
+    font-weight: bold;
+}
+.view{
+    background-color: yellow;
+    margin-left: 30px;
+    width: 100px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    color: black;
+    font-weight: bold; 
+}
+.booked{
+    background-color: lightseagreen;
+    margin-left: 30px;
+    width: 100px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    color: black;
+    font-weight: bold; 
+}
+.sold{
+    background-color: red;
+    margin-left: 30px;
+    width: 100px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    color: black;
+    font-weight: bold; 
+}
+/*Mobile Device*/
+@media only screen and (max-width:850px){
+    .menuBtn{
+        display: block;
+    }
+    .navbar{
+        padding: 0;
+    }
+    .logo{
+        position: absolute;
+        top: 20px;
+        left: 30px;
+    }
+    .navlinks{
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        background-color: #06182E;
+        margin-top: -900px;
+        transition: all 0.5s ease;
+    }
+    .mobilemenu{
+        margin-top: 0;
+        border-bottom-right-radius: 30%;
+    }
+    
+    .navlinks li{
+        margin: 10px auto;
+    }
+}
